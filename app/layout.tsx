@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const sora = Sora({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Adrian's Portfolio",
-  description: "Modern & Minimal JS Mastery Portfolio",
+  title: "Izzy's Portfolio",
+  description: "Experienced Full Stack developer Portfolio",
 };
 
 export default function RootLayout({
@@ -18,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
-      </head>
-      <body className={inter.className}>
+      <body className={sora.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
