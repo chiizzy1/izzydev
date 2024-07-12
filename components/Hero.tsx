@@ -49,7 +49,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Izzy, a experienced Next.js Developer.
+            Hi! I&apos;m Izzy, a skilled Full Stack Developer.
           </p>
 
           <a href="#about">

@@ -1,12 +1,6 @@
 "use client";
 import React from "react";
-import {
-  motion,
-  useAnimationFrame,
-  useMotionTemplate,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimationFrame, useMotionTemplate, useMotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +27,7 @@ export function Button({
     <Component
       className={cn(
         // remove h-16 w-40, add  md:col-span-2
-        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
+        "bg-transparent cursor-default relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
         containerClassName
       )}
       style={{
@@ -41,17 +35,9 @@ export function Button({
       }}
       {...otherProps}
     >
-      <div
-        className="absolute inset-0 rounde-[1.75rem]"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-      >
+      <div className="absolute inset-0 rounde-[1.75rem]" style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}>
         <MovingBorder duration={duration} rx="30%" ry="30%">
-          <div
-            className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]",
-              borderClassName
-            )}
-          />
+          <div className={cn("h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]", borderClassName)} />
         </MovingBorder>
       </div>
 
@@ -94,14 +80,8 @@ export const MovingBorder = ({
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
-  );
+  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).x);
+  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).y);
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
@@ -115,14 +95,7 @@ export const MovingBorder = ({
         height="100%"
         {...otherProps}
       >
-        <rect
-          fill="none"
-          width="100%"
-          height="100%"
-          rx={rx}
-          ry={ry}
-          ref={pathRef}
-        />
+        <rect fill="none" width="100%" height="100%" rx={rx} ry={ry} ref={pathRef} />
       </svg>
       <motion.div
         style={{

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -46,15 +47,9 @@ export const InfiniteMovingCards = ({
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
+        containerRef.current.style.setProperty("--animation-direction", "forwards");
       } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
+        containerRef.current.style.setProperty("--animation-direction", "reverse");
       }
     }
   };
@@ -98,8 +93,7 @@ export const InfiniteMovingCards = ({
               //   add these two
               //   you can generate the color from here https://cssgradient.io/
               background: "rgb(4,7,29)",
-              backgroundColor:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+              backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
             }}
             // change to idx cuz we have the same name
             key={idx}
@@ -110,23 +104,17 @@ export const InfiniteMovingCards = ({
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               {/* change text color, text-lg */}
-              <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
-                {item.quote}
-              </span>
+              <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">{item.quote}</span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 {/* add this div for the profile img */}
-                <div className="me-3">
-                  <img src="/profile.svg" alt="profile" />
-                </div>
+                {/* <div className="me-3">
+                  <Image src="/profile.svg" width={50} height={50} alt="profile image" />
+                </div> */}
                 <span className="flex flex-col gap-1">
                   {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className="text-xl font-bold leading-[1.6] text-white">
-                    {item.name}
-                  </span>
+                  <span className="text-xl font-bold leading-[1.6] text-white">{item.name}</span>
                   {/* change text color */}
-                  <span className=" text-sm leading-[1.6] text-white-200 font-normal">
-                    {item.title}
-                  </span>
+                  <span className=" text-sm leading-[1.6] text-white-200 font-normal">{item.title}</span>
                 </span>
               </div>
             </blockquote>
