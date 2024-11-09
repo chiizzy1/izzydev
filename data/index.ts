@@ -89,19 +89,19 @@ export const projects = [
   },
   {
     id: 3,
-    title: "UniqueNFT's",
+    title: "HedgeLoop",
     des: "A distinctive digital art and collectibles platform where users can explore, purchase, and sell exceptional NFTs within a decentralized marketplace.",
-    img: "/p7.png",
+    img: "/hedgeloop.jpg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://uniquenft.vercel.app/",
+    link: "https://hedgeloop.org/",
   },
   {
     id: 4,
-    title: "FLIP",
-    des: "Buy, sell, and grow your crypto with Flip, the platform designed for traders of all levels.",
+    title: "KairoCoin",
+    des: "MemeCoin Presale website for kairocoin a very popular memecoin on multiple chains.",
     img: "/p8.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://alphatradefx.vercel.app/",
+    link: "https://kairocoin.vercel.app/",
   },
 ];
 
